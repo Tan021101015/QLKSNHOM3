@@ -66,6 +66,12 @@
     <Compile Include="QLD-TP.Designer.cs">
       <DependentUpon>QLD-TP.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLKH.Designer.cs">
+      <DependentUpon>QLKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLTK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </Compile>
     <EmbeddedResource Include="QLD-TP.resx">
       <DependentUpon>QLD-TP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLKH.resx">
+      <DependentUpon>QLKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLTK.resx">
       <DependentUpon>QLTK.cs</DependentUpon>
