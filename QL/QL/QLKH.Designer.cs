@@ -31,6 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,12 +49,6 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -92,6 +92,36 @@
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã khách hàng";
+            this.columnHeader1.Width = 107;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên khách hàng";
+            this.columnHeader2.Width = 210;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Giới tính";
+            this.columnHeader3.Width = 89;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Địa chỉ";
+            this.columnHeader4.Width = 77;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "SĐT";
+            this.columnHeader5.Width = 112;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Mã  phòng  ";
+            this.columnHeader6.Width = 119;
             // 
             // button1
             // 
@@ -209,36 +239,6 @@
             this.radioButton2.Text = "Nữ";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã khách hàng";
-            this.columnHeader1.Width = 107;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên khách hàng";
-            this.columnHeader2.Width = 210;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Giới tính";
-            this.columnHeader3.Width = 89;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Địa chỉ";
-            this.columnHeader4.Width = 77;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "SĐT";
-            this.columnHeader5.Width = 112;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Mã  phòng  ";
-            this.columnHeader6.Width = 119;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -256,7 +256,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 43);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Lưu";
+            this.button2.Text = "Lưu trữ";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QL
 {
-    public partial class FORMQL : Form
+    public partial class QLHOADON : Form
     {
-        public FORMQL()
+        public QLHOADON()
         {
             InitializeComponent();
         }

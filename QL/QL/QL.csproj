@@ -52,11 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMQL.cs">
+    <Compile Include="FQL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMQL.Designer.cs">
-      <DependentUpon>FORMQL.cs</DependentUpon>
+    <Compile Include="FQL.Designer.cs">
+      <DependentUpon>FQL.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,11 +66,41 @@
     <Compile Include="QLD-TP.Designer.cs">
       <DependentUpon>QLD-TP.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDV.Designer.cs">
+      <DependentUpon>QLDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLHOADON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLHOADON.Designer.cs">
+      <DependentUpon>QLHOADON.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLKH.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QLKH.Designer.cs">
       <DependentUpon>QLKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLNV.Designer.cs">
+      <DependentUpon>QLNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLPHONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLPHONG.Designer.cs">
+      <DependentUpon>QLPHONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTB.Designer.cs">
+      <DependentUpon>QLTB.cs</DependentUpon>
     </Compile>
     <Compile Include="QLTK.cs">
       <SubType>Form</SubType>
@@ -81,8 +111,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMQL.resx">
-      <DependentUpon>FORMQL.cs</DependentUpon>
+    <EmbeddedResource Include="FQL.resx">
+      <DependentUpon>FQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,8 +126,23 @@
     <EmbeddedResource Include="QLD-TP.resx">
       <DependentUpon>QLD-TP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLDV.resx">
+      <DependentUpon>QLDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLHOADON.resx">
+      <DependentUpon>QLHOADON.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLKH.resx">
       <DependentUpon>QLKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLNV.resx">
+      <DependentUpon>QLNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLPHONG.resx">
+      <DependentUpon>QLPHONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTB.resx">
+      <DependentUpon>QLTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLTK.resx">
       <DependentUpon>QLTK.cs</DependentUpon>
