@@ -47,7 +47,7 @@ namespace QL.BUS
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Cap nhat hoa don khong thanh cong!");
+                    MessageBox.Show("Cập nhật hóa đơn không thành công!");
 
                 }
             }
