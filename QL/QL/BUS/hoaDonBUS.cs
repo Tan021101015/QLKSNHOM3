@@ -48,7 +48,7 @@ namespace QL.BUS
                 catch (Exception)
                 {
                     MessageBox.Show("Cập nhật hóa đơn không thành công!");
-
+                    //cap nhat
                 }
             }
         }
