@@ -15,7 +15,7 @@ namespace QL.DAO
         {
             try
             {
-                string sql = @"Data Source=LAPTOP-6GCI30QH\SQLEXPRESS01;Initial Catalog=qlks1;Integrated Security=True";
+                string sql = @"Data Source=DESKTOP-3QTK54T;Initial Catalog=QLKS;Integrated Security=True";
                 cnn.ConnectionString = sql;
                 if (cnn.State == ConnectionState.Closed)
                 {

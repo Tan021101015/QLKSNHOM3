@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QL.DTO;
 using QL.DAO;
+using System.Windows.Forms;
 namespace QL.BUS
 {
     class QLtaikhoanBUS

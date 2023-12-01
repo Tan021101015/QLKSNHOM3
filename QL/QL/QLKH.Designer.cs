@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtmkh = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvwkh = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnthem = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txttenkh = new System.Windows.Forms.TextBox();
@@ -46,14 +46,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtsdt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtmaphong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnluu = new System.Windows.Forms.Button();
+            this.btncapnhat = new System.Windows.Forms.Button();
+            this.btnxoa = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -74,25 +74,25 @@
             this.txtmkh.Size = new System.Drawing.Size(214, 26);
             this.txtmkh.TabIndex = 1;
             // 
-            // listView1
+            // lvwkh
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvwkh.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(70, 219);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(707, 151);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.Click += new System.EventHandler(this.listView1_Click);
+            this.lvwkh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvwkh.FullRowSelect = true;
+            this.lvwkh.GridLines = true;
+            this.lvwkh.Location = new System.Drawing.Point(70, 219);
+            this.lvwkh.Name = "lvwkh";
+            this.lvwkh.Size = new System.Drawing.Size(707, 151);
+            this.lvwkh.TabIndex = 2;
+            this.lvwkh.UseCompatibleStateImageBehavior = false;
+            this.lvwkh.View = System.Windows.Forms.View.Details;
+            this.lvwkh.Click += new System.EventHandler(this.listView1_Click);
             // 
             // columnHeader1
             // 
@@ -121,18 +121,19 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Mã  phòng  ";
+            this.columnHeader6.Text = "Ngày sinh";
             this.columnHeader6.Width = 119;
             // 
-            // button1
+            // btnthem
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(70, 393);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 43);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthem.Location = new System.Drawing.Point(70, 393);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.Size = new System.Drawing.Size(113, 43);
+            this.btnthem.TabIndex = 3;
+            this.btnthem.Text = "Thêm";
+            this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click_1);
             // 
             // radioButton1
             // 
@@ -170,9 +171,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(459, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 20);
+            this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Mã phòng :";
+            this.label3.Text = "Ngày sinh :";
             // 
             // txtdiachi
             // 
@@ -210,14 +211,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "SĐT :";
             // 
-            // txtmaphong
-            // 
-            this.txtmaphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmaphong.Location = new System.Drawing.Point(557, 171);
-            this.txtmaphong.Name = "txtmaphong";
-            this.txtmaphong.Size = new System.Drawing.Size(212, 26);
-            this.txtmaphong.TabIndex = 1;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -250,35 +243,38 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Quản lý khách hàng ";
             // 
-            // button2
+            // btnluu
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(214, 393);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 43);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Lưu trữ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnluu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnluu.Location = new System.Drawing.Point(214, 393);
+            this.btnluu.Name = "btnluu";
+            this.btnluu.Size = new System.Drawing.Size(113, 43);
+            this.btnluu.TabIndex = 3;
+            this.btnluu.Text = "Lưu trữ";
+            this.btnluu.UseVisualStyleBackColor = true;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click_1);
             // 
-            // button3
+            // btncapnhat
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(354, 393);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 43);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Cập nhật";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btncapnhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncapnhat.Location = new System.Drawing.Point(354, 393);
+            this.btncapnhat.Name = "btncapnhat";
+            this.btncapnhat.Size = new System.Drawing.Size(113, 43);
+            this.btncapnhat.TabIndex = 3;
+            this.btncapnhat.Text = "Cập nhật";
+            this.btncapnhat.UseVisualStyleBackColor = true;
+            this.btncapnhat.Click += new System.EventHandler(this.btncapnhat_Click_1);
             // 
-            // button4
+            // btnxoa
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(513, 393);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(113, 43);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxoa.Location = new System.Drawing.Point(513, 393);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(113, 43);
+            this.btnxoa.TabIndex = 3;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click_1);
             // 
             // button5
             // 
@@ -291,20 +287,30 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(557, 176);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(212, 26);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
             // QLKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 464);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.txtmaphong);
+            this.Controls.Add(this.btnxoa);
+            this.Controls.Add(this.btncapnhat);
+            this.Controls.Add(this.btnluu);
+            this.Controls.Add(this.btnthem);
+            this.Controls.Add(this.lvwkh);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtdiachi);
             this.Controls.Add(this.txtsdt);
@@ -328,8 +334,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtmkh;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView lvwkh;
+        private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -344,13 +350,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtsdt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtmaphong;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnluu;
+        private System.Windows.Forms.Button btncapnhat;
+        private System.Windows.Forms.Button btnxoa;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
