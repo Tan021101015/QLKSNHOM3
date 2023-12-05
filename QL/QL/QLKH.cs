@@ -76,22 +76,20 @@ namespace QL
 
         private void btnluu_Click_1(object sender, EventArgs e)
         {
-            KhachhangDTO kh = new KhachhangDTO();
-            kh.makh = txtmkh.Text;
-            kh.tenkh = txttenkh.Text;
+            string gioitinh = "";
             if (radioButton1.Checked == true)
             {
-                kh.gioitinh = "Nam";
+                gioitinh = "Nam";
             }
             else
             {
-                kh.gioitinh = "Nữ";
+                gioitinh = "Nữ";
             }
-            kh.diachi = txtdiachi.Text;
-            kh.sodt = txtsdt.Text;
-            kh.ngaysinh = dateTimePicker1.Value.ToString("MM/dd/yyyy");
-            KhachhangBUS.Luu_KH(kh);
+            string sql = "insert into Khachhang( makh,tenkh,ngaysinh ,  gioitinh, sodt ,diachi ) values(N'" + txtmkh.Text + "',N'" + txttenkh.Text + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "',N'" + gioitinh + "','" + txtsdt.Text + "',N'" + txtdiachi.Text + "')";
+            DAO.ketNoi.docDL(sql);
             loaddata();
+            
+
         }
 
         private void btncapnhat_Click_1(object sender, EventArgs e)

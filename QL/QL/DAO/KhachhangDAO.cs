@@ -19,12 +19,12 @@ namespace QL.DAO
         }
         public static void luu_khachhang(KhachhangDTO kh)
         {
-            string sql = "INSERT INTO Khachhang(makh, tenkh, gioitinh, diachi, sodt, ngaysinh) VALUES('" + kh.makh + "', N'" + kh.tenkh + "', N'" + kh.gioitinh + "',N '" + kh.diachi + "', '" + kh.sodt + "', '" + kh.ngaysinh + "')";
+            string sql = "INSERT INTO Khachhang(makh, diachi, tenkh, ngaysinh, gioitinh, sodt)VALUES(N'" + kh.makh + "', N'" + kh.diachi + "', N'" + kh.tenkh + "', '" + kh.ngaysinh + "', N'" + kh.gioitinh + "', '" + kh.sodt + "')";
             ketNoi.thucThiTruyVan(sql);
         }
         public static void capnhat_khachhang(KhachhangDTO kh)
         {
-            string sql = " update Khachhang set tenkh=N'" + kh.tenkh + "',gioitinh=N'" + kh.gioitinh + "',diachi=N'" + kh.diachi + ",sodt='" + kh.sodt + "',ngaysinh='" + kh.ngaysinh + "' where makh=N'" + kh.makh + "'";
+            string sql = "update Khachhang set tenkh=N'" + kh.tenkh + "',diachi=N'" + kh.diachi + "',ngaysinh='" + kh.ngaysinh + "',gioitinh=N'" + kh.gioitinh + "',sodt='" + kh.sodt + "'where makh=N'" + kh.makh + "'";
             ketNoi.thucThiTruyVan(sql);
         }
         public static void xoa_khachhang(KhachhangDTO kh)
