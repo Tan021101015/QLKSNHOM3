@@ -99,7 +99,7 @@ namespace QL
             comloaiphong.Text = listView1.SelectedItems[0].SubItems[2].Text;
             continhtrang.Text = listView1.SelectedItems[0].SubItems[3].Text;
             txtdongia.Text = listView1.SelectedItems[0].SubItems[4].Text;
-            //g
+            //gf
         }
     }
     }
