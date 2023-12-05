@@ -33,6 +33,7 @@ namespace QL.DAO
             if (cnn.State == ConnectionState.Open)
             {
                 cnn.Close();
+                //
             }
         }
         public static DataTable docDL(string sql)
