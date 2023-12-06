@@ -31,8 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txttentk = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtmk = new System.Windows.Forms.TextBox();
@@ -44,7 +42,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbloaitk = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtmanv = new System.Windows.Forms.TextBox();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbmanv = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -61,8 +62,9 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
@@ -78,16 +80,6 @@
             // 
             this.columnHeader1.Text = "Tên TK";
             this.columnHeader1.Width = 207;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Mật Khẩu";
-            this.columnHeader2.Width = 235;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Loại TK";
-            this.columnHeader3.Width = 179;
             // 
             // txttentk
             // 
@@ -198,19 +190,36 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã nhân viên :";
             // 
-            // txtmanv
+            // columnHeader4
             // 
-            this.txtmanv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmanv.Location = new System.Drawing.Point(606, 84);
-            this.txtmanv.Name = "txtmanv";
-            this.txtmanv.Size = new System.Drawing.Size(207, 26);
-            this.txtmanv.TabIndex = 3;
+            this.columnHeader4.Text = "Mã Nhân viên";
+            this.columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Mật khẩu";
+            this.columnHeader5.Width = 145;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Loại Tk";
+            this.columnHeader6.Width = 141;
+            // 
+            // cbmanv
+            // 
+            this.cbmanv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmanv.FormattingEnabled = true;
+            this.cbmanv.Location = new System.Drawing.Point(606, 84);
+            this.cbmanv.Name = "cbmanv";
+            this.cbmanv.Size = new System.Drawing.Size(207, 28);
+            this.cbmanv.TabIndex = 6;
             // 
             // QLTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 455);
+            this.Controls.Add(this.cbmanv);
             this.Controls.Add(this.cbloaitk);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button4);
@@ -219,7 +228,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtmk);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtmanv);
             this.Controls.Add(this.txttentk);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
@@ -247,10 +255,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ComboBox cbloaitk;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtmanv;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ComboBox cbmanv;
     }
 }

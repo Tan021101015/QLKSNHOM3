@@ -33,12 +33,20 @@ namespace QL
 
             }
         }
+        public void TTNV()
+        {
+            DataTable dt = new DataTable();
+            dt = QLtaikhoanDAO.TTNV();
+            cbmanv.DataSource = dt;
+            cbmanv.ValueMember = "manv";
+            cbmanv.DisplayMember = "manv";
 
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             QLtaikhoanDTO tk = new QLtaikhoanDTO();
             tk.tentk = txttentk.Text;
-            tk.manv = txtmanv.Text;
+            tk.manv = cbmanv.SelectedValue.ToString();
             tk.matkhau = txtmk.Text;
             tk.loaitk = cbloaitk.SelectedItem.ToString();
             QLtaikhoanBUS.Them_TK(tk);
@@ -48,8 +56,9 @@ namespace QL
 
         private void QLTK_Load(object sender, EventArgs e)
         {
-            cbloaitk.Items.Add("QL");
-            cbloaitk.Items.Add("NV");
+            TTNV();
+            cbloaitk.Items.Add("Quản lý");
+            cbloaitk.Items.Add("Nhân viên");
             TT_TK();
         }
 
@@ -57,7 +66,7 @@ namespace QL
         {
             QLtaikhoanDTO tk = new QLtaikhoanDTO();
             tk.tentk = txttentk.Text;
-            tk.manv = txtmanv.Text;
+            tk.manv = cbmanv.SelectedValue.ToString();
             tk.matkhau = txtmk.Text;
             tk.loaitk = cbloaitk.SelectedItem.ToString();
             QLtaikhoanBUS.CapNhat_TK(tk);
@@ -68,7 +77,7 @@ namespace QL
         private void button3_Click(object sender, EventArgs e)
         {
             QLtaikhoanDTO tk = new QLtaikhoanDTO();
-            tk.manv = txtmanv.Text;
+            tk.manv = cbmanv.SelectedValue.ToString();
             QLtaikhoanBUS.Xoa_TK(tk);
             listView1.Items.Clear();
             TT_TK();
@@ -82,7 +91,7 @@ namespace QL
         private void listView1_Click(object sender, EventArgs e)
         {
             txttentk.Text = listView1.SelectedItems[0].SubItems[0].Text;
-            txtmanv.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            cbmanv.Text = listView1.SelectedItems[0].SubItems[1].Text;
             txtmk.Text = listView1.SelectedItems[0].SubItems[2].Text;
             cbloaitk.Text = listView1.SelectedItems[0].SubItems[3].Text;
 

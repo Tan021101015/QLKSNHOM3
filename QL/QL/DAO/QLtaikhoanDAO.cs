@@ -9,6 +9,13 @@ namespace QL.DAO
 {
     class QLtaikhoanDAO
     {
+        public static DataTable TTNV()
+        {
+            string sql = "select * from Nhanvien";
+            DataTable dt = new DataTable();
+            dt = ketNoi.docDL(sql);
+            return dt;
+        }
         public static DataTable TTTK()
         {
             string sql = "select * from Taikhoan";
@@ -18,8 +25,8 @@ namespace QL.DAO
         }
         public static void Them_TK(QLtaikhoanDTO tk)
         {
-            string sql = "INSERT INTO Taikhoan VALUES(N'" + tk.tentk + "',N'" + tk.manv + "','" + tk.matkhau + "','" + tk.loaitk + "')";
-            ketNoi.docDL(sql);
+            string sql = "INSERT INTO Taikhoan VALUES(N'" + tk.tentk + "',N'" + tk.manv + "','" + tk.matkhau + "',N'" + tk.loaitk + "')";
+            ketNoi.thucThiTruyVan(sql);
         }
         public static void CapNhat_TK(QLtaikhoanDTO tk)
         {

@@ -39,7 +39,7 @@ namespace QL.BUS
 
         public static void CapNhat_TK(QLtaikhoanDTO tk)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa tài khoản này ?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn chắc chắn muốn cập nhật tài khoản này ?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
