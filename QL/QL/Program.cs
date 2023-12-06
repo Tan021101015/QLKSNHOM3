@@ -17,7 +17,7 @@ namespace QL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Application.Run(new QLTB());
+            Application.Run(new QLD_TP());
         }
     }
 }
