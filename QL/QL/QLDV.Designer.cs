@@ -31,18 +31,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +79,22 @@
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã DV";
+            this.columnHeader1.Width = 162;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên DV";
+            this.columnHeader2.Width = 309;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Giá DV";
+            this.columnHeader3.Width = 183;
             // 
             // button1
             // 
@@ -88,6 +105,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -135,40 +153,27 @@
             this.textBox3.Size = new System.Drawing.Size(165, 26);
             this.textBox3.TabIndex = 1;
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã DV";
-            this.columnHeader1.Width = 162;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên DV";
-            this.columnHeader2.Width = 309;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Giá DV";
-            this.columnHeader3.Width = 183;
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(282, 333);
+            this.button2.Location = new System.Drawing.Point(412, 333);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 55);
             this.button2.TabIndex = 3;
             this.button2.Text = "Cập nhật";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(508, 333);
+            this.button3.Location = new System.Drawing.Point(574, 333);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 55);
             this.button3.TabIndex = 3;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -179,6 +184,18 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Thoát";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(218, 333);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(115, 55);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Lưu trữ";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // QLDV
             // 
@@ -187,6 +204,7 @@
             this.ClientSize = new System.Drawing.Size(936, 454);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
@@ -199,6 +217,7 @@
             this.Controls.Add(this.label1);
             this.Name = "QLDV";
             this.Text = "QLDV";
+            this.Load += new System.EventHandler(this.QLDV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +240,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
