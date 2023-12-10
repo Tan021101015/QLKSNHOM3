@@ -28,12 +28,12 @@ namespace QL.DAO
         }
         public static void tt_mapMax(phongdto kh)
         {
-            string sql = " insert into Phong (maphong,tenphong,loaiphong,tinhtrang,dongia) values ('" + kh.maphong + "','" + kh.tenphong + "','" + kh.loaiphong + "','" + kh.tinhtrang + "','" + kh.dongia + "')";
+            string sql = " insert into Phong (maphong,tenphong,loaiphong,tinhtrang,dongia) values ('" + kh.maphong + "',N'" + kh.tenphong + "',N'" + kh.loaiphong + "',N'" + kh.tinhtrang + "','" + kh.dongia + "')";
             ketNoi.thucThiTruyVan(sql);
         }
         public static void capnhatphong(phongdto kh)
         {
-            string sql = "update Phong set tenphong='" + kh.tenphong + "',loaiphong='" + kh.loaiphong + "',tinhtrang='" + kh.tinhtrang + "',dongia='" + kh.dongia + "'where maphong='" + kh.maphong + "'";
+            string sql = "update Phong set tenphong=N'" + kh.tenphong + "',loaiphong=N'" + kh.loaiphong + "',tinhtrang=N'" + kh.tinhtrang + "',dongia='" + kh.dongia + "'where maphong='" + kh.maphong + "'";
             ketNoi.thucThiTruyVan(sql);
         }
         public static void xoaphong(phongdto kh)

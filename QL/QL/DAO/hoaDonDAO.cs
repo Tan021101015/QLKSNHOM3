@@ -17,9 +17,9 @@ namespace QL.DAO
             dt = ketNoi.docDL(sql);
             return dt;
         }
-        public static DataTable tt_dichvu()
+        public static DataTable tt_kh()
         {
-            string sql = "select *from Dichvu";
+            string sql = "select *from Khachhang";
             DataTable dt = new DataTable();
             dt = ketNoi.docDL(sql);
             return dt;
@@ -59,6 +59,41 @@ namespace QL.DAO
         {
             string sql = " delete from Hoadon where mahd=N'"+hd.mahd+"'";
             ketNoi.thucThiTruyVan(sql);
+        }
+        public static DataTable tt_phong(string makh)
+        {
+            string sql = " select maphong from Dattra where makh='" + makh+"'";
+            DataTable dt = new DataTable();
+            dt = ketNoi.docDL(sql);
+            return dt;
+        }
+        public static DataTable tt_dvphong(string makh,string maphong)
+        {
+            string sql = " select madv from Dattra where makh='" + makh + "' and maphong='" + maphong + "'";
+            DataTable dt = new DataTable();
+            dt = ketNoi.docDL(sql);
+            return dt;
+        }
+        public static DataTable tt_dattra(string makh, string maphong, string madv)
+        {
+            string sql = " select ngaydat,ngaytra from Dattra where makh='" + makh + "' and madv='" + madv + "' and maphong='" + maphong + "'";
+            DataTable dt = new DataTable();
+            dt = ketNoi.docDL(sql);
+            return dt;
+        }
+        public static DataTable tt_tonggia(string makh, string maphong, string madv)
+        {
+            string sql = " select dongia + giadv as tong  from Dichvu dv,Phong p, Dattra dt where dt.makh='" + makh + "' and dv.madv='" + madv + "' and p.maphong='" + maphong + "' 		";
+            DataTable dt = new DataTable();
+            dt = ketNoi.docDL(sql);
+            return dt;
+        }
+        public static DataTable xoa_phong(string maphong)
+        {
+            string sql = " delete from Dattra where maphong=N'" + maphong + "'";
+            DataTable dt = new DataTable();
+            dt = ketNoi.docDL(sql);
+            return dt;
         }
     }
 }

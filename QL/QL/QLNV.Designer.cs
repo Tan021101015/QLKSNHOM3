@@ -68,6 +68,7 @@
             // 
             // txtmanv
             // 
+            this.txtmanv.Enabled = false;
             this.txtmanv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmanv.Location = new System.Drawing.Point(140, 69);
             this.txtmanv.Name = "txtmanv";
@@ -113,7 +114,6 @@
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // columnHeader1

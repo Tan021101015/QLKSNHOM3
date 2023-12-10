@@ -68,6 +68,7 @@
             // 
             // txtmkh
             // 
+            this.txtmkh.Enabled = false;
             this.txtmkh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmkh.Location = new System.Drawing.Point(189, 72);
             this.txtmkh.Name = "txtmkh";

@@ -54,5 +54,22 @@ namespace QL.DAO
             string sql = " delete from Dattra where makh=N'" + p.makh + "'";
             ketNoi.thucThiTruyVan(sql);
         }
+        public static DataTable TTdatphong(string loaiphong)
+        {
+            DataTable dt = new DataTable();
+            string sql = "select maphong from Phong where loaiphong=N'"+loaiphong+"' and tinhtrang=N'Còn phòng'";
+            dt = ketNoi.docDL(sql);
+            return dt;
+        }
+        public static void capnhatphong(string maphong)
+        {
+            string sql = "update Phong set tinhtrang=N'Còn phòng' where maphong='" + maphong + "'";
+            ketNoi.thucThiTruyVan(sql);
+        }
+        public static void capnhatphong2(string maphong)
+        {
+            string sql = "update Phong set tinhtrang=N'Hết phòng' where maphong='" + maphong + "'";
+            ketNoi.thucThiTruyVan(sql);
+        }
     }
 }

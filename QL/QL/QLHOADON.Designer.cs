@@ -56,6 +56,8 @@
             this.lvHoaDon = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbmakh = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbmaphong = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -81,10 +83,11 @@
             // 
             this.cbDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDichVu.FormattingEnabled = true;
-            this.cbDichVu.Location = new System.Drawing.Point(157, 183);
+            this.cbDichVu.Location = new System.Drawing.Point(157, 242);
             this.cbDichVu.Name = "cbDichVu";
             this.cbDichVu.Size = new System.Drawing.Size(214, 28);
             this.cbDichVu.TabIndex = 2;
+            this.cbDichVu.SelectedIndexChanged += new System.EventHandler(this.cbDichVu_SelectedIndexChanged);
             // 
             // btThem
             // 
@@ -130,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 189);
+            this.label4.Location = new System.Drawing.Point(31, 243);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
             this.label4.TabIndex = 0;
@@ -244,21 +247,22 @@
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(233, 26);
             this.txtSL.TabIndex = 1;
+            this.txtSL.Text = "1";
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã HD";
-            this.columnHeader1.Width = 129;
+            this.columnHeader1.Width = 66;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Mã KH";
-            this.columnHeader2.Width = 112;
+            this.columnHeader2.Width = 72;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Ngày đặt";
-            this.columnHeader3.Width = 138;
+            this.columnHeader3.Width = 96;
             // 
             // columnHeader4
             // 
@@ -268,7 +272,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Dịch vụ";
-            this.columnHeader5.Width = 152;
+            this.columnHeader5.Width = 71;
             // 
             // columnHeader6
             // 
@@ -311,6 +315,27 @@
             this.cbmakh.Name = "cbmakh";
             this.cbmakh.Size = new System.Drawing.Size(212, 28);
             this.cbmakh.TabIndex = 6;
+            this.cbmakh.SelectedIndexChanged += new System.EventHandler(this.cbmakh_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(31, 189);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Mã phòng :";
+            // 
+            // cbmaphong
+            // 
+            this.cbmaphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmaphong.FormattingEnabled = true;
+            this.cbmaphong.Location = new System.Drawing.Point(157, 183);
+            this.cbmaphong.Name = "cbmaphong";
+            this.cbmaphong.Size = new System.Drawing.Size(214, 28);
+            this.cbmaphong.TabIndex = 2;
+            this.cbmaphong.SelectedIndexChanged += new System.EventHandler(this.cbmaphong_SelectedIndexChanged);
             // 
             // QLHOADON
             // 
@@ -326,8 +351,10 @@
             this.Controls.Add(this.btLuuTru);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.lvHoaDon);
+            this.Controls.Add(this.cbmaphong);
             this.Controls.Add(this.cbDichVu);
             this.Controls.Add(this.txtSL);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -376,5 +403,7 @@
         private System.Windows.Forms.ListView lvHoaDon;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ComboBox cbmakh;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbmaphong;
     }
 }

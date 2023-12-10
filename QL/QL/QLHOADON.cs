@@ -33,27 +33,25 @@ namespace QL
                 lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["madv"].ToString());
                 lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["tongtien"].ToString());
                 lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["soluong"].ToString());
+      
+                lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["soluong"].ToString());
 
             }
         }
-        public void ttdichvu()
+        public void ttkh()
         {
             DataTable dt = new DataTable();
-            dt = hoaDonDAO.tt_dichvu();
-            cbDichVu.DataSource = dt;
-            cbDichVu.DisplayMember = "tendv";
-            cbDichVu.ValueMember = "madv";
+            dt = hoaDonDAO.tt_kh();
+            cbmakh.DataSource = dt;
+            cbmakh.DisplayMember = "makh";
+            cbmakh.ValueMember = "makh";
         }
 
         private void QLHOADON_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = QLdattraphongDAO.TTkhachhang();
-            cbmakh.DataSource = dt;
-            cbmakh.ValueMember = "makh";
-            cbmakh.DisplayMember = "makh";
+           
             tt_HoaDon();
-            ttdichvu();
+            ttkh();
         }
 
         private void lvHoaDon_Click(object sender, EventArgs e)
@@ -80,6 +78,7 @@ namespace QL
             dtHD = hoaDonDAO.tt_maHDMax();
             string mahd = dtHD.Rows[0][0].ToString();
             txtMaHD.Text = "HD" + (Convert.ToInt32(mahd.Substring(2, mahd.Length - 2)) + 1).ToString("00");
+          
         }
 
         private void btLuuTru_Click(object sender, EventArgs e)
@@ -87,13 +86,14 @@ namespace QL
             hoaDontDTO hd = new hoaDontDTO();
             hd.mahd = txtMaHD.Text;
             hd.makh = cbmakh.SelectedValue.ToString();
-            hd.madv = cbDichVu.SelectedValue.ToString();
+            hd.madv = cbDichVu.SelectedItem.ToString();
             hd.soluong = txtSL.Text;
             hd.tongtien = txtDonGia.Text;
             hd.ngaydat = dtNgayDat.Value.ToString("MM/dd/yyyy");
             hd.ngaytra = dtNgayTra.Value.ToString("MM/dd/yyyy");
             hoaDonBUS.Luu_HD(hd);
             tt_HoaDon();
+            hoaDonDAO.xoa_phong(cbmaphong.Text);
         }
 
         private void btCapNhat_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace QL
             hoaDontDTO hd = new hoaDontDTO();
             hd.mahd = txtMaHD.Text;
             hd.makh = cbmakh.SelectedValue.ToString();
-            hd.madv = cbDichVu.SelectedValue.ToString();
+            hd.madv = cbDichVu.SelectedItem.ToString();
             hd.soluong = txtSL.Text;
             hd.tongtien = txtDonGia.Text;
             hd.ngaydat = dtNgayDat.Value.ToString("MM/dd/yyyy");
@@ -114,12 +114,7 @@ namespace QL
         {
             hoaDontDTO hd = new hoaDontDTO();
             hd.mahd = txtMaHD.Text;
-            hd.makh = cbmakh.SelectedItem.ToString();
-            hd.madv = cbDichVu.SelectedValue.ToString();
-            hd.soluong = txtSL.Text;
-            hd.tongtien = txtDonGia.Text;
-            hd.ngaydat = dtNgayDat.Value.ToString("MM/dd/yyyy");
-            hd.ngaytra = dtNgayTra.Value.ToString("MM/dd/yyyy");
+            
             hoaDonBUS.Xoa_HD(hd);
             tt_HoaDon();
         }
@@ -130,6 +125,54 @@ namespace QL
         }
 
         private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDichVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = hoaDonDAO.tt_dattra(cbmakh.Text, cbmaphong.Text, cbDichVu.Text);
+            dtNgayDat.Text = dt.Rows[0]["ngaydat"].ToString();
+            dtNgayTra.Text = dt.Rows[0]["ngaytra"].ToString();
+
+            DataTable tong = new DataTable();
+            tong = hoaDonDAO.tt_tonggia(cbmakh.Text, cbmaphong.Text, cbDichVu.Text);
+            txtDonGia.Text = tong.Rows[0]["tong"].ToString();
+
+        }
+
+        private void cbmakh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbmaphong.Text = "";
+            cbmaphong.Items.Clear();
+            DataTable dt = new DataTable();
+            dt = hoaDonDAO.tt_phong(cbmakh.Text);
+            int sldv = dt.Rows.Count;
+            for (int i = 0; i < sldv; i++)
+            {
+                cbmaphong.Items.Add(dt.Rows[i]["maphong"].ToString());
+            }
+               
+        }
+
+        private void cbmaphong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbDichVu.Text = "";
+            cbDichVu.Items.Clear();
+            DataTable dt = new DataTable();
+            dt = hoaDonDAO.tt_dvphong(cbmakh.Text, cbmaphong.Text);
+            int sldv = dt.Rows.Count;
+            for (int i = 0; i < sldv; i++)
+            {
+                cbDichVu.Items.Add(dt.Rows[i]["madv"].ToString());
+            }
+
+
+           
+        }
+
+        private void txtSL_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -57,7 +57,7 @@ namespace QL
         private void QLTK_Load(object sender, EventArgs e)
         {
             TTNV();
-            cbloaitk.Items.Add("Quản lý");
+            cbloaitk.Items.Add("Quản lí");
             cbloaitk.Items.Add("Nhân viên");
             TT_TK();
         }

@@ -35,15 +35,7 @@ namespace QL
 
             }
         }
-        private void QLPHONG_Load(object sender, EventArgs e)
-        {
-            tt_phong();
-            comloaiphong.Items.Add("PHONGDON");
-            comloaiphong.Items.Add("PHONGDOI");
-            comloaiphong.Items.Add("PHONGGIADINH");
-            continhtrang.Items.Add("CONPHONG");
-            continhtrang.Items.Add("HETPHONG");
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -92,6 +84,23 @@ namespace QL
             this.Close();
         }
 
+       
+
+       
+
+        
+        private void QLPHONG_Load_1(object sender, EventArgs e)
+        {
+            tt_phong();
+            comloaiphong.Items.Add("Đơn");
+            comloaiphong.Items.Add("Đôi");
+            comloaiphong.Items.Add("Vip Đơn");
+            comloaiphong.Items.Add("Vip Đôi");
+            comloaiphong.Items.Add("Phòng gia đình");
+            continhtrang.Items.Add("Còn phòng");
+            continhtrang.Items.Add("Hết Phòng");
+        }
+
         private void listView1_Click(object sender, EventArgs e)
         {
             txtmaphong.Text = listView1.SelectedItems[0].SubItems[0].Text;
@@ -99,7 +108,6 @@ namespace QL
             comloaiphong.Text = listView1.SelectedItems[0].SubItems[2].Text;
             continhtrang.Text = listView1.SelectedItems[0].SubItems[3].Text;
             txtdongia.Text = listView1.SelectedItems[0].SubItems[4].Text;
-            //4444g
         }
     }
     }

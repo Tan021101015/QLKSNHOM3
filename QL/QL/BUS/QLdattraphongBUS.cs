@@ -18,7 +18,7 @@ namespace QL.BUS
             }
             catch (Exception)
             {
-                MessageBox.Show("Thêm  không thành công !!!! ");
+                MessageBox.Show("Thêm  không thành công do trùng phòng!!!! ");
             }
         }
 

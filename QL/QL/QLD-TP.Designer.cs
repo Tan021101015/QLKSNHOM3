@@ -46,9 +46,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.cbdichvu = new System.Windows.Forms.ComboBox();
             this.cbmaphong = new System.Windows.Forms.ComboBox();
+            this.cbloaiphong = new System.Windows.Forms.ComboBox();
             this.cbmakh = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbmadv = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -122,9 +124,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(62, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 0;
-            this.label2.Text = " Mã Dịch vụ :";
+            this.label2.Text = " Mã phòng :";
             // 
             // label3
             // 
@@ -142,15 +144,15 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(67, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Mã phòng :";
+            this.label4.Text = "Loại phòng :";
             // 
             // datedat
             // 
             this.datedat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datedat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datedat.Location = new System.Drawing.Point(503, 54);
+            this.datedat.Location = new System.Drawing.Point(542, 60);
             this.datedat.Name = "datedat";
             this.datedat.Size = new System.Drawing.Size(200, 26);
             this.datedat.TabIndex = 4;
@@ -159,7 +161,7 @@
             // 
             this.datetra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datetra.Location = new System.Drawing.Point(503, 105);
+            this.datetra.Location = new System.Drawing.Point(542, 111);
             this.datetra.Name = "datetra";
             this.datetra.Size = new System.Drawing.Size(200, 26);
             this.datetra.TabIndex = 4;
@@ -168,7 +170,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(412, 108);
+            this.label6.Location = new System.Drawing.Point(451, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 20);
             this.label6.TabIndex = 0;
@@ -178,7 +180,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(408, 59);
+            this.label7.Location = new System.Drawing.Point(447, 65);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 20);
             this.label7.TabIndex = 0;
@@ -217,23 +219,24 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // cbdichvu
-            // 
-            this.cbdichvu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbdichvu.FormattingEnabled = true;
-            this.cbdichvu.Location = new System.Drawing.Point(200, 155);
-            this.cbdichvu.Name = "cbdichvu";
-            this.cbdichvu.Size = new System.Drawing.Size(174, 28);
-            this.cbdichvu.TabIndex = 5;
-            // 
             // cbmaphong
             // 
             this.cbmaphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbmaphong.FormattingEnabled = true;
-            this.cbmaphong.Location = new System.Drawing.Point(200, 105);
+            this.cbmaphong.Location = new System.Drawing.Point(200, 155);
             this.cbmaphong.Name = "cbmaphong";
             this.cbmaphong.Size = new System.Drawing.Size(174, 28);
             this.cbmaphong.TabIndex = 5;
+            // 
+            // cbloaiphong
+            // 
+            this.cbloaiphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbloaiphong.FormattingEnabled = true;
+            this.cbloaiphong.Location = new System.Drawing.Point(200, 105);
+            this.cbloaiphong.Name = "cbloaiphong";
+            this.cbloaiphong.Size = new System.Drawing.Size(174, 28);
+            this.cbloaiphong.TabIndex = 5;
+            this.cbloaiphong.SelectedIndexChanged += new System.EventHandler(this.cbloaiphong_SelectedIndexChanged);
             // 
             // cbmakh
             // 
@@ -244,14 +247,34 @@
             this.cbmakh.Size = new System.Drawing.Size(174, 28);
             this.cbmakh.TabIndex = 5;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(437, 163);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = " Mã Dịch vụ :";
+            // 
+            // cbmadv
+            // 
+            this.cbmadv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmadv.FormattingEnabled = true;
+            this.cbmadv.Location = new System.Drawing.Point(542, 157);
+            this.cbmadv.Name = "cbmadv";
+            this.cbmadv.Size = new System.Drawing.Size(200, 28);
+            this.cbmadv.TabIndex = 5;
+            // 
             // QLD_TP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 462);
             this.Controls.Add(this.cbmakh);
+            this.Controls.Add(this.cbloaiphong);
+            this.Controls.Add(this.cbmadv);
             this.Controls.Add(this.cbmaphong);
-            this.Controls.Add(this.cbdichvu);
             this.Controls.Add(this.datetra);
             this.Controls.Add(this.datedat);
             this.Controls.Add(this.button5);
@@ -262,6 +285,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -293,8 +317,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox cbdichvu;
         private System.Windows.Forms.ComboBox cbmaphong;
+        private System.Windows.Forms.ComboBox cbloaiphong;
         private System.Windows.Forms.ComboBox cbmakh;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbmadv;
     }
 }

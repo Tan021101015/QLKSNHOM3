@@ -99,6 +99,7 @@
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(18, 212);
             this.listView1.Name = "listView1";
@@ -277,7 +278,7 @@
             this.Controls.Add(this.label1);
             this.Name = "QLPHONG";
             this.Text = "QLPHONG";
-            this.Load += new System.EventHandler(this.QLPHONG_Load);
+            this.Load += new System.EventHandler(this.QLPHONG_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

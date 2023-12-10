@@ -21,9 +21,14 @@ namespace QL
 
         private void QLD_TP_Load(object sender, EventArgs e)
         {
+            cbloaiphong.Items.Add("Đơn");
+            cbloaiphong.Items.Add("Đôi");
+            cbloaiphong.Items.Add("Vip Đơn");
+            cbloaiphong.Items.Add("Vip Đôi");
+            cbloaiphong.Items.Add("Phòng gia đình");
             TT_P();
             LoadDLComboBox();
-            LoadDLComboBoxphong();
+            
             LoadDLComboBoxdichvu();
         }
         public void TT_P()
@@ -50,29 +55,23 @@ namespace QL
             cbmakh.ValueMember = "makh";
             cbmakh.DisplayMember = "makh";
         }
-        public void LoadDLComboBoxphong()
-        {
-            DataTable dt = new DataTable();
-            dt = QLdattraphongDAO.TTphong();
-            cbmaphong.DataSource = dt;
-            cbmaphong.ValueMember = "maphong";
-            cbmaphong.DisplayMember = "maphong";
-        }
+       
         public void LoadDLComboBoxdichvu()
         {
             DataTable dt = new DataTable();
             dt = QLdattraphongDAO.TTdichvu();
-            cbdichvu.DataSource = dt;
-            cbdichvu.ValueMember = "madv";
-            cbdichvu.DisplayMember = "tendv";
+            cbmadv.DataSource = dt;
+            cbmadv.ValueMember = "madv";
+            cbmadv.DisplayMember = "tendv";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            QLdattraphongDAO.capnhatphong2(cbmaphong.Text);
             QLdattraphongDTO p = new QLdattraphongDTO();
             p.makh = cbmakh.SelectedValue.ToString();
-            p.maphong = cbmaphong.SelectedValue.ToString();
-            p.madv = cbdichvu.SelectedValue.ToString();
+            p.maphong = cbmaphong.SelectedItem.ToString();
+            p.madv = cbmadv.SelectedValue.ToString();
             p.ngaydat = datedat.Value.ToString("MM/dd/yyyy");
             p.ngaytra = datetra.Value.ToString("MM/dd/yyyy");
             QLdattraphongBUS.them(p);
@@ -82,10 +81,11 @@ namespace QL
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             QLdattraphongDTO p = new QLdattraphongDTO();
             p.makh = cbmakh.SelectedValue.ToString();
-            p.maphong = cbmaphong.SelectedValue.ToString();
-            p.madv = cbdichvu.SelectedValue.ToString();
+            p.maphong = cbmaphong.SelectedItem.ToString();
+            p.madv = cbmadv.SelectedValue.ToString();
             p.ngaydat = datedat.Value.ToString("MM/dd/yyyy");
             p.ngaytra = datetra.Value.ToString("MM/dd/yyyy");
             QLdattraphongBUS.capnhat(p);
@@ -95,6 +95,7 @@ namespace QL
 
         private void button4_Click(object sender, EventArgs e)
         {
+            QLdattraphongDAO.capnhatphong(cbmaphong.Text);
             QLdattraphongDTO p = new QLdattraphongDTO();
             p.makh = cbmakh.Text;
             QLdattraphongBUS.xoa(p);
@@ -110,10 +111,23 @@ namespace QL
         private void listView1_Click(object sender, EventArgs e)
         {
             cbmakh.Text = listView1.SelectedItems[0].SubItems[0].Text;
-            cbmaphong.Text = listView1.SelectedItems[0].SubItems[1].Text;
-            cbdichvu.SelectedValue = listView1.SelectedItems[0].SubItems[2].Text;
+            cbmadv.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            cbmaphong.SelectedValue = listView1.SelectedItems[0].SubItems[2].Text;
             datedat.Text = listView1.SelectedItems[0].SubItems[3].Text;
             datetra.Text = listView1.SelectedItems[0].SubItems[4].Text;
+        }
+
+        private void cbloaiphong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbmaphong.Text = "";
+            cbmaphong.Items.Clear();
+            DataTable dt = new DataTable();
+            dt = QLdattraphongDAO.TTdatphong(cbloaiphong.Text);
+            int sldv = dt.Rows.Count;
+            for (int i = 0; i < sldv; i++)
+            {
+                cbmaphong.Items.Add(dt.Rows[i]["maphong"].ToString());
+            }
         }
     }
 }
