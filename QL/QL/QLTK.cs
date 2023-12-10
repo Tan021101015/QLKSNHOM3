@@ -77,7 +77,7 @@ namespace QL
         private void button3_Click(object sender, EventArgs e)
         {
             QLtaikhoanDTO tk = new QLtaikhoanDTO();
-            tk.manv = cbmanv.SelectedValue.ToString();
+            tk.manv = cbmanv.Text;
             QLtaikhoanBUS.Xoa_TK(tk);
             listView1.Items.Clear();
             TT_TK();

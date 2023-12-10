@@ -11,7 +11,7 @@ namespace QL.DAO
     {
         public static DataTable TTNV()
         {
-            string sql = "select * from Nhanvien";
+            string sql = "SELECT Nhanvien.*FROM Nhanvien LEFT JOIN Taikhoan ON Nhanvien.manv = Taikhoan.manv WHERE Taikhoan.manv IS NULL;";
             DataTable dt = new DataTable();
             dt = ketNoi.docDL(sql);
             return dt;
