@@ -83,6 +83,7 @@ namespace QL
 
         private void btLuuTru_Click(object sender, EventArgs e)
         {
+            QLdattraphongDAO.capnhatphong(cbmaphong.Text);
             hoaDontDTO hd = new hoaDontDTO();
             hd.mahd = txtMaHD.Text;
             hd.makh = cbmakh.SelectedValue.ToString();

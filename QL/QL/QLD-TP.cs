@@ -97,7 +97,7 @@ namespace QL
         {
             QLdattraphongDAO.capnhatphong(cbmaphong.Text);
             QLdattraphongDTO p = new QLdattraphongDTO();
-            p.makh = cbmakh.Text;
+            p.maphong = cbmaphong.Text;
             QLdattraphongBUS.xoa(p);
             listView1.Items.Clear();
             TT_P();
@@ -111,8 +111,8 @@ namespace QL
         private void listView1_Click(object sender, EventArgs e)
         {
             cbmakh.Text = listView1.SelectedItems[0].SubItems[0].Text;
-            cbmadv.Text = listView1.SelectedItems[0].SubItems[1].Text;
-            cbmaphong.SelectedValue = listView1.SelectedItems[0].SubItems[2].Text;
+            cbmaphong.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            cbmadv.SelectedValue = listView1.SelectedItems[0].SubItems[2].Text;
             datedat.Text = listView1.SelectedItems[0].SubItems[3].Text;
             datetra.Text = listView1.SelectedItems[0].SubItems[4].Text;
         }
@@ -128,6 +128,11 @@ namespace QL
             {
                 cbmaphong.Items.Add(dt.Rows[i]["maphong"].ToString());
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

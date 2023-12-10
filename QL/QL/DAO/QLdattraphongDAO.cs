@@ -51,7 +51,7 @@ namespace QL.DAO
         }
         public static void xoa(QLdattraphongDTO p)
         {
-            string sql = " delete from Dattra where makh=N'" + p.makh + "'";
+            string sql = " delete from Dattra where maphong=N'" + p.maphong + "'";
             ketNoi.thucThiTruyVan(sql);
         }
         public static DataTable TTdatphong(string loaiphong)
