@@ -31,10 +31,12 @@ namespace QL
                 lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["ngaydat"].ToString());
                 lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["ngaytra"].ToString());
                 lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["madv"].ToString());
-                lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["tongtien"].ToString());
+                float gia = float.Parse(dtHD.Rows[i]["tongtien"].ToString());
+                lvHoaDon.Items[i].SubItems.Add(gia.ToString("#,###") + "VND");
+                //lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["tongtien"].ToString());
                 lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["soluong"].ToString());
       
-                lvHoaDon.Items[i].SubItems.Add(dtHD.Rows[i]["soluong"].ToString());
+                
 
             }
         }
@@ -87,9 +89,14 @@ namespace QL
             hoaDontDTO hd = new hoaDontDTO();
             hd.mahd = txtMaHD.Text;
             hd.makh = cbmakh.SelectedValue.ToString();
+
             hd.madv = cbDichVu.SelectedItem.ToString();
             hd.soluong = txtSL.Text;
-            hd.tongtien = txtDonGia.Text;
+            string input = txtDonGia.Text;
+            string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
+            hd.tongtien = output.ToString();
+
+            //hd.tongtien = txtDonGia.Text;
             hd.ngaydat = dtNgayDat.Value.ToString("MM/dd/yyyy");
             hd.ngaytra = dtNgayTra.Value.ToString("MM/dd/yyyy");
             hoaDonBUS.Luu_HD(hd);
@@ -102,9 +109,14 @@ namespace QL
             hoaDontDTO hd = new hoaDontDTO();
             hd.mahd = txtMaHD.Text;
             hd.makh = cbmakh.SelectedValue.ToString();
-            hd.madv = cbDichVu.SelectedItem.ToString();
+            DataTable dtDichVu = new DataTable();
+            dtDichVu = hoaDonDAO.tt_dichvuTheotenDV(cbDichVu.Text);
+            hd.madv = dtDichVu.Rows[0][0].ToString();
             hd.soluong = txtSL.Text;
-            hd.tongtien = txtDonGia.Text;
+            string input = txtDonGia.Text;
+            string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
+            hd.tongtien = output.ToString();
+            //hd.tongtien = txtDonGia.Text;
             hd.ngaydat = dtNgayDat.Value.ToString("MM/dd/yyyy");
             hd.ngaytra = dtNgayTra.Value.ToString("MM/dd/yyyy");
             hoaDonBUS.CapNhat_HD(hd);

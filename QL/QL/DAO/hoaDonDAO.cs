@@ -31,6 +31,13 @@ namespace QL.DAO
             dt = ketNoi.docDL(sql);
             return dt;
         }
+        public static DataTable tt_dichvuTheotenDV(string tendv)
+        {
+            string sql = "select *from Dichvu where tendv=N'" + tendv + "'";
+            DataTable dt = new DataTable();
+            dt = ketNoi.docDL(sql);
+            return dt;
+        }
         public static DataTable tt_maHDMax()
         {
             string sql = " select top 1 mahd from Hoadon order by mahd desc";

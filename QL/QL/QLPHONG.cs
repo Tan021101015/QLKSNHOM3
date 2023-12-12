@@ -31,8 +31,9 @@ namespace QL
                 listView1.Items[i].SubItems.Add(dtp.Rows[i][1].ToString());
                 listView1.Items[i].SubItems.Add(dtp.Rows[i][2].ToString());
                 listView1.Items[i].SubItems.Add(dtp.Rows[i][3].ToString());
-                listView1.Items[i].SubItems.Add(dtp.Rows[i][4].ToString());
-
+                //listView1.Items[i].SubItems.Add(dtp.Rows[i][4].ToString());
+                float gia = float.Parse(dtp.Rows[i][4].ToString());
+                listView1.Items[i].SubItems.Add(gia.ToString("#,###") + "VND");
             }
         }
        
@@ -53,7 +54,10 @@ namespace QL
             kh.tenphong = txttenphong.Text;
             kh.loaiphong = comloaiphong.Text;
             kh.tinhtrang = continhtrang.Text;
-            kh.dongia = txtdongia.Text;
+            string input = txtdongia.Text;
+            string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
+            kh.dongia = output.ToString();
+            //kh.dongia = txtdongia.Text;
             phongbus.themphong(kh);
             tt_phong();
         }
@@ -66,7 +70,11 @@ namespace QL
             kh.tenphong = txttenphong.Text;
             kh.loaiphong = comloaiphong.Text;
             kh.tinhtrang = continhtrang.Text;
-            kh.dongia = txtdongia.Text;
+            string input = txtdongia.Text;
+            string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
+            kh.dongia = output.ToString();
+
+            //kh.dongia = txtdongia.Text;
             phongbus.CapNhat_phong(kh);
             tt_phong();
         }
@@ -108,6 +116,21 @@ namespace QL
             comloaiphong.Text = listView1.SelectedItems[0].SubItems[2].Text;
             continhtrang.Text = listView1.SelectedItems[0].SubItems[3].Text;
             txtdongia.Text = listView1.SelectedItems[0].SubItems[4].Text;
+        }
+
+        private void txttenphong_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comloaiphong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void continhtrang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
     }

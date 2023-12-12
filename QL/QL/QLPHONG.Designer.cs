@@ -89,6 +89,7 @@
             this.comloaiphong.Name = "comloaiphong";
             this.comloaiphong.Size = new System.Drawing.Size(243, 28);
             this.comloaiphong.TabIndex = 2;
+            this.comloaiphong.SelectedIndexChanged += new System.EventHandler(this.comloaiphong_SelectedIndexChanged);
             // 
             // listView1
             // 
@@ -162,6 +163,7 @@
             this.txttenphong.Name = "txttenphong";
             this.txttenphong.Size = new System.Drawing.Size(243, 26);
             this.txttenphong.TabIndex = 1;
+            this.txttenphong.TextChanged += new System.EventHandler(this.txttenphong_TextChanged);
             // 
             // label4
             // 
@@ -209,6 +211,7 @@
             this.continhtrang.Name = "continhtrang";
             this.continhtrang.Size = new System.Drawing.Size(246, 28);
             this.continhtrang.TabIndex = 2;
+            this.continhtrang.SelectedIndexChanged += new System.EventHandler(this.continhtrang_SelectedIndexChanged);
             // 
             // button2
             // 

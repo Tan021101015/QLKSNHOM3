@@ -33,7 +33,10 @@ namespace QL
             {
                 listView1.Items.Add(dt.Rows[i][0].ToString());
                 listView1.Items[i].SubItems.Add(dt.Rows[i][1].ToString());
-                listView1.Items[i].SubItems.Add(dt.Rows[i][2].ToString());
+                float gia = float.Parse( dt.Rows[i][2].ToString());
+                listView1.Items[i].SubItems.Add(gia.ToString("#,###")+"VND");
+               
+
                 //textBox1.Text = dt.Rows[i][0].ToString();
                 //textBox2.Text = dt.Rows[i][1].ToString();
                 //textBox3.Text = dt.Rows[i][2].ToString();
@@ -50,7 +53,9 @@ namespace QL
             QLDVDTO dv = new QLDVDTO();
             dv.madv = textBox1.Text;
             dv.tendv = textBox2.Text;
-            dv.giadv = textBox3.Text;
+            string input = textBox3.Text;
+            string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
+            dv.giadv = output.ToString();
 
             DAO.QLDVDAO.them(dv);
             listView1.Items.Clear();
@@ -67,7 +72,10 @@ namespace QL
             QLDVDTO dv = new QLDVDTO();
             dv.madv = textBox1.Text;
             dv.tendv = textBox2.Text;
-            dv.giadv = textBox3.Text;
+            string input = textBox3.Text;
+            string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
+            dv.giadv = output.ToString();
+            
             DAO.QLDVDAO.cn(dv);
             listView1.Items.Clear();
             TT_DV();
@@ -88,6 +96,11 @@ namespace QL
             textBox1.Text = listView1.SelectedItems[0].SubItems[0].Text;
             textBox2.Text = listView1.SelectedItems[0].SubItems[1].Text;
             textBox3.Text = listView1.SelectedItems[0].SubItems[2].Text;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

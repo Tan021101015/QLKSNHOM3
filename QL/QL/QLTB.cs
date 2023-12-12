@@ -35,7 +35,10 @@ namespace QL
                 listView1.Items.Add(dt.Rows[i][0].ToString());
                 listView1.Items[i].SubItems.Add(dt.Rows[i][1].ToString());
                 listView1.Items[i].SubItems.Add(dt.Rows[i][2].ToString());
-                listView1.Items[i].SubItems.Add(dt.Rows[i][3].ToString());
+                float gia = float.Parse(dt.Rows[i][3].ToString());
+                listView1.Items[i].SubItems.Add(gia.ToString("#,###") + "VND");
+
+                //listView1.Items[i].SubItems.Add(dt.Rows[i][3].ToString());
 
             }
         }
@@ -63,7 +66,11 @@ namespace QL
             tb.matb = txtma.Text;
             tb.maphong = cbmap.SelectedValue.ToString();
             tb.tentb = txttentb.Text;
-            tb.gia = txtgia.Text;        
+            string input = txtgia.Text;
+            string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
+            tb.gia = output.ToString();
+
+            //tb.gia = txtgia.Text;        
             QLTBBUS.Them_TB(tb);
             listView1.Items.Clear();
             TT_TB();
@@ -75,7 +82,10 @@ namespace QL
             tb.matb = txtma.Text;
             tb.maphong = cbmap.SelectedValue.ToString();
             tb.tentb = txttentb.Text;
-            tb.gia = txtgia.Text;          
+            string input = txtgia.Text;
+            string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
+            tb.gia = output.ToString();
+            //tb.gia = txtgia.Text;          
             QLTBBUS.CapNhat_TB(tb);
             listView1.Items.Clear();
             TT_TB();
