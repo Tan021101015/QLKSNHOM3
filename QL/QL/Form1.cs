@@ -45,6 +45,15 @@ namespace QL
             Application.Exit();
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+                textBox2.PasswordChar = '\0';
+            }
+            else { textBox2.PasswordChar = '*'; }
+        }
     }
     }
 
