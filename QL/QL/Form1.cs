@@ -20,7 +20,7 @@ namespace QL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection cn = new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLKSNHOM3;Integrated Security=True");
+            SqlConnection cn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=QLKSNHOM3;Integrated Security=True");
             SqlDataAdapter da = new SqlDataAdapter("select * from Taikhoan where tentk = '" + textBox1.Text + "'and matkhau ='" + textBox2.Text + "'", cn);
             DataTable dt = new DataTable();
             da.Fill(dt);

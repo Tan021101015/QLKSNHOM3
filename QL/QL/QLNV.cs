@@ -60,7 +60,7 @@ namespace QL
             {
                 gioitinh = "Nữ";
             }
-            string sql = "insert into Nhanvien( manv,tennv,ngaysinh ,  gioitinh, sodt ,diachi ) values('"+txtmanv.Text+"',N'"+txttennv.Text+"','"+dateTimePicker1.Text+"',N'" + gioitinh+ "','"+txtsdt.Text+"',N'"+txtdiachi.Text+"')";
+            string sql = "insert into Nhanvien( manv,tennv,ngaysinh ,  gioitinh, sodt ,diachi ) values('"+txtmanv.Text+"',N'"+txttennv.Text+"','"+dateTimePicker1.Value.ToString("MM/dd/yyyy")+"',N'" + gioitinh+ "','"+txtsdt.Text+"',N'"+txtdiachi.Text+"')";
             DAO.ketNoi.docDL(sql);
             laydulieu();
             DataTable dt = new DataTable();

@@ -39,6 +39,7 @@
             this.qLHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLĐặttrảPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,8 @@
             this.qlNhânViênToolStripMenuItem,
             this.qLHóaĐơnToolStripMenuItem,
             this.qLĐặttrảPhòngToolStripMenuItem,
-            this.qLThiếtBịToolStripMenuItem});
+            this.qLThiếtBịToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(893, 24);
@@ -125,6 +127,13 @@
             this.qLThiếtBịToolStripMenuItem.Text = "QL thiết bị";
             this.qLThiếtBịToolStripMenuItem.Click += new System.EventHandler(this.qLThiếtBịToolStripMenuItem_Click);
             // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
             // FQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,5 +165,6 @@
         private System.Windows.Forms.ToolStripMenuItem qLHóaĐơnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qLĐặttrảPhòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qLThiếtBịToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }
