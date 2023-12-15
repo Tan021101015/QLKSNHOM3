@@ -18,7 +18,7 @@ namespace QL.BUS
             }
             catch (Exception)
             {
-                MessageBox.Show("Thêm  không thành công do mã nhân viên sai hoặc chưa có nhân viên này !!!! ");
+                MessageBox.Show("Thêm  không thành công do mã nhân viên sai hoặc trùng tên tài khoản  !!!! ");
             }
         }
 

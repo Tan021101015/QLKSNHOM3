@@ -66,7 +66,7 @@ namespace QL
         {
             QLtaikhoanDTO tk = new QLtaikhoanDTO();
             tk.tentk = txttentk.Text;
-            tk.manv = cbmanv.SelectedValue.ToString();
+            tk.manv = cbmanv.Text;
             tk.matkhau = txtmk.Text;
             tk.loaitk = cbloaitk.SelectedItem.ToString();
             QLtaikhoanBUS.CapNhat_TK(tk);

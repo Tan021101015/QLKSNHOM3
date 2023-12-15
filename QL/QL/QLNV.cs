@@ -70,8 +70,11 @@ namespace QL
         {
 
             listView1.Items.Clear();
+            string sqltk = " delete from Taikhoan where manv = '" + txtmanv.Text + "'";
             string sql = " delete from Nhanvien where manv = '" + txtmanv.Text + "'";
+            DAO.ketNoi.docDL(sqltk);
             DAO.ketNoi.docDL(sql);
+
             laydulieu();
             DataTable dt = new DataTable();
         }
