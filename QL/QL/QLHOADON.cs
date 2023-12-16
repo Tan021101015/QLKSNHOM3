@@ -48,25 +48,41 @@ namespace QL
             cbmakh.DisplayMember = "makh";
             cbmakh.ValueMember = "makh";
         }
-
+        public void tt_dv()
+        {
+            DataTable dt = new DataTable();
+            dt = hoaDonDAO.tt_dv();
+            cbDichVu.DataSource = dt;
+            cbDichVu.DisplayMember = "tendv";
+            cbDichVu.ValueMember = "madv";
+        }
         private void QLHOADON_Load(object sender, EventArgs e)
         {
-           
+            
             tt_HoaDon();
             ttkh();
         }
 
         private void lvHoaDon_Click(object sender, EventArgs e)
         {
+            cbDichVu.Items.Clear();
+            DataTable dt = new DataTable();
+            dt = hoaDonDAO.tt_dv();
+            int sldv = dt.Rows.Count;
+            for (int i = 0; i < sldv; i++)
+            {
+                cbDichVu.Items.Add(dt.Rows[i]["madv"].ToString());
+            }
             txtMaHD.Text = lvHoaDon.SelectedItems[0].SubItems[0].Text;
             cbmakh.Text = lvHoaDon.SelectedItems[0].SubItems[1].Text;
             dtNgayDat.Text = lvHoaDon.SelectedItems[0].SubItems[2].Text;
             dtNgayTra.Text = lvHoaDon.SelectedItems[0].SubItems[3].Text;
             txtDonGia.Text= lvHoaDon.SelectedItems[0].SubItems[5].Text;
             txtSL.Text= lvHoaDon.SelectedItems[0].SubItems[6].Text;
+            cbDichVu.Text= lvHoaDon.SelectedItems[0].SubItems[4].Text;
             DataTable dtDichVu = new DataTable();
             dtDichVu = hoaDonDAO.tt_dichvuTheoMaDV(lvHoaDon.SelectedItems[0].SubItems[4].Text);
-            cbDichVu.Text = dtDichVu.Rows[0][1].ToString();
+            textBox1.Text = dtDichVu.Rows[0][1].ToString();
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -111,7 +127,7 @@ namespace QL
             hd.makh = cbmakh.SelectedValue.ToString();
             DataTable dtDichVu = new DataTable();
             dtDichVu = hoaDonDAO.tt_dichvuTheotenDV(cbDichVu.Text);
-            hd.madv = dtDichVu.Rows[0][0].ToString();
+            hd.madv = cbDichVu.SelectedItem.ToString();
             hd.soluong = txtSL.Text;
             string input = txtDonGia.Text;
             string output = (int.Parse(input.Replace(",", "").Replace("VND", ""))).ToString();
@@ -144,15 +160,30 @@ namespace QL
 
         private void cbDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             DataTable dt = new DataTable();
+
             dt = hoaDonDAO.tt_dattra(cbmakh.Text, cbmaphong.Text, cbDichVu.Text);
-            dtNgayDat.Text = dt.Rows[0]["ngaydat"].ToString();
-            dtNgayTra.Text = dt.Rows[0]["ngaytra"].ToString();
+            if (dt.Rows.Count == 0)
+            {
+                textBox1.Text = "";
+                DataTable dtdv = new DataTable();
+                dtdv = hoaDonDAO.tt_dichvuTheoMaDV(cbDichVu.Text);
+                textBox1.Text = dtdv.Rows[0]["tendv"].ToString();
+            }
+            else
+            {
+                dtNgayDat.Text = dt.Rows[0]["ngaydat"].ToString();
+                dtNgayTra.Text = dt.Rows[0]["ngaytra"].ToString();
 
-            DataTable tong = new DataTable();
-            tong = hoaDonDAO.tt_tonggia(cbmakh.Text, cbmaphong.Text, cbDichVu.Text);
-            txtDonGia.Text = tong.Rows[0]["tong"].ToString();
-
+                DataTable tong = new DataTable();
+                tong = hoaDonDAO.tt_tonggia(cbmakh.Text, cbmaphong.Text, cbDichVu.Text);
+                txtDonGia.Text = tong.Rows[0]["tong"].ToString();
+                textBox1.Text = "";
+                DataTable dtdv = new DataTable();
+                dtdv = hoaDonDAO.tt_dichvuTheoMaDV(cbDichVu.Text);
+                textBox1.Text = dtdv.Rows[0]["tendv"].ToString();
+            }
         }
 
         private void cbmakh_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,7 +202,8 @@ namespace QL
 
         private void cbmaphong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbDichVu.Text = "";
+
+            cbDichVu.Text = "";                     
             cbDichVu.Items.Clear();
             DataTable dt = new DataTable();
             dt = hoaDonDAO.tt_dvphong(cbmakh.Text, cbmaphong.Text);
@@ -180,9 +212,9 @@ namespace QL
             {
                 cbDichVu.Items.Add(dt.Rows[i]["madv"].ToString());
             }
-
-
            
+
+
         }
 
         private void txtSL_TextChanged(object sender, EventArgs e)

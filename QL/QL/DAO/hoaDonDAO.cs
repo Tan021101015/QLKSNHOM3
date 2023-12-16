@@ -24,6 +24,13 @@ namespace QL.DAO
             dt = ketNoi.docDL(sql);
             return dt;
         }
+        public static DataTable tt_dv()
+        {
+            string sql = "select *from Dichvu";
+            DataTable dt = new DataTable();
+            dt = ketNoi.docDL(sql);
+            return dt;
+        }
         public static DataTable tt_dichvuTheoMaDV(string madv)
         {
             string sql = "select *from Dichvu where madv=N'"+madv+"'";
